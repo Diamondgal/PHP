@@ -42,6 +42,7 @@
 
 // array index and value.  Array index variable, number & string. 
 // array value is the postion witin the array
+
 $comp = ["jen","dad", "mom"];
 echo $comp [2]. " and roll";
 
