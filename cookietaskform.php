@@ -1,12 +1,12 @@
 <?php include "header.php" ?>
 
 
-<form action ="cookietaskform.php" method="post">
+<!-- <form action ="cookietaskform.php" method="post">
 Name : <input type ="text" name="name" required><br>
 E-mail : <input type ="email" name="email" required><br>
 <input type ="submit" value = "Submit">
 </form>
-
+ -->
 
 
 <?php

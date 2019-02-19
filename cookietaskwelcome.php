@@ -12,13 +12,13 @@ E-mail : <input type ="email" name="email" required><br>
 
 $name = "Michelle" ;
 $name_value = "";
-setcookie($name, $name_value, time(30));
+setcookie($name, $name_value, time(30) + (84600 *60));
 
 
-if(!isset($_COOKIE[$name])) {
-       echo "Cookie Broken" ;
+if(!empty($_COOKIE && [$name])) {
+       echo "<h1>Your Name is good" . "</h1>" ;
 }
 else {
-    echo "Cookie Good";
+    echo "<h1>Please try again" . "</h1>" ;
 }
 ?>
