@@ -1,10 +1,16 @@
 <a href="TodoAppHTMLindex.php">Home</a>
 
 <?php
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+  }
 //  validate string
 
 if(!empty($_POST['name'])) {
-    $name = $_POST['name'];
+    $name = test_input($_POST['name']);
     function validateName($name) {
         return $name;
     }
@@ -27,11 +33,8 @@ try {
     $xyz = "INSERT INTO tasks (task, status)
         VALUES ('$name','pending')";
     
-        // use exec() because no results are returned
-
     $pdo->exec($xyz);
     $last_id = $pdo->lastInsertID();
-
 
     echo "New Record succesfully created";
 }

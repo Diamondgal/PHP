@@ -4,6 +4,7 @@
 <link href="MainToDoApp.css" rel="Stylesheet">    
 </head>
 <body>
+    <div class = "container">
 <h1>Here's Your To Do App</h1>
 <form action = "./Add.php"  method="post"> 
     To Do Item:
@@ -20,8 +21,7 @@ $username = "root";
 $password = "";
 $dbname = "todoapp";
 
-//Create a task and bind the task to tasks column, or delete a 
-//task from tasks on ID on done 'submit' in prepared statement 
+
 // select tasks from db, per row data, display records
 // in table 
 
@@ -39,9 +39,9 @@ try {
 
     foreach ($taskList as $row) {
 ?>
-<table>
-     <tr>
-        <td><?php echo $row['Task']; ?></td>
+<table class = "table">
+     <tr class = "tr">
+        <td class = "td" ><?php echo $row['Task']; ?><?php ; ?></td>
         <td>
             <form method='post' action='./Delete.php'>
             <input type='hidden' name='id' value= <?php echo $row['id'] ?> >
