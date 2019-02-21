@@ -1,3 +1,5 @@
+<a href="TodoAppHTMLindex.php">Home</a>
+
 <?php
 //  validate string
 
