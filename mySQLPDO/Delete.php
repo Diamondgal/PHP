@@ -1,11 +1,11 @@
-<a href="TodoAppHTMLindex.php">Home</a>
+<a href="ToDoAppHTMLindex.php">Home</a>
 
 <?php
 
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "todo#1";
 $dbname = "todoapp";
 $id = $_POST["id"];
 
@@ -15,7 +15,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // sql to delete a record
-    $sql = "DELETE FROM Tasks WHERE id=$id";
+    $sql = "DELETE FROM tasks WHERE id=$id";
 
     // use exec() because no results are returned
     $conn->exec($sql);

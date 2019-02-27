@@ -18,7 +18,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "todo#1";
 $dbname = "todoapp";
 
 

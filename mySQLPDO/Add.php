@@ -1,4 +1,4 @@
-<a href="TodoAppHTMLindex.php">Home</a>
+<a href="ToDoAppHTMLindex.php">Home</a>
 
 <?php
 function test_input($data) {
@@ -18,7 +18,7 @@ if(!empty($_POST['name'])) {
 }
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "todo#1";
 $dbname = "todoapp";
 echo"<table>";
 
