@@ -1,6 +1,8 @@
 <a href="ToDoAppHTMLindex.php">Home</a>
 
 <?php
+include "connection.php";
+
 function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -16,10 +18,8 @@ if(!empty($_POST['name'])) {
     }
     validateName($name);
 }
-$servername = "localhost";
-$username = "root";
-$password = "todo#1";
-$dbname = "todoapp";
+
+
 echo"<table>";
 
 // $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

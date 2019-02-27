@@ -16,10 +16,9 @@
 
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "todo#1";
-$dbname = "todoapp";
+include "connection.php" ;
+
+
 
 
 // select tasks from db, per row data, display records

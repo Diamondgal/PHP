@@ -2,11 +2,9 @@
 
 <?php
 
+include "connection.php";
 
-$servername = "localhost";
-$username = "root";
-$password = "todo#1";
-$dbname = "todoapp";
+
 $id = $_POST["id"];
 
 try {
