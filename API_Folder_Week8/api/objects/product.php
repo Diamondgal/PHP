@@ -148,5 +148,60 @@ function update(){
  
     return false;
 }
-
+// delete the product
+function delete(){
+ 
+    // delete query
+    $query = "DELETE FROM " . $this->table_name . " WHERE id = ?";
+ 
+    // prepare query
+    $stmt = $this->conn->prepare($query);
+ 
+    // sanitize
+    $this->id=htmlspecialchars(strip_tags($this->id));
+ 
+    // bind id of record to delete
+    $stmt->bindParam(1, $this->id);
+ 
+    // execute query
+    if($stmt->execute()){
+        return true;
+    }
+ 
+    return false;
+     
+}
+// search products
+function search($keywords){
+ 
+    // select all query
+    $query = "SELECT
+                c.name as category_name, p.id, p.name, p.description, p.price, p.category_id, p.created
+            FROM
+                " . $this->table_name . " p
+                LEFT JOIN
+                    categories c
+                        ON p.category_id = c.id
+            WHERE
+                p.name LIKE ? OR p.description LIKE ? OR c.name LIKE ?
+            ORDER BY
+                p.created DESC";
+ 
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+ 
+    // sanitize
+    $keywords=htmlspecialchars(strip_tags($keywords));
+    $keywords = "%{$keywords}%";
+ 
+    // bind
+    $stmt->bindParam(1, $keywords);
+    $stmt->bindParam(2, $keywords);
+    $stmt->bindParam(3, $keywords);
+ 
+    // execute query
+    $stmt->execute();
+ 
+    return $stmt;
+}
 }
