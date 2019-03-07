@@ -9,11 +9,12 @@ try{
     $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
-    $stmt = $dbh->prepare('SELECT id  FROM mydvds WHERE id = ? LIMIT 0,1');
-                
+    $stmt = "SELECT id  FROM mydvds WHERE id = ? LIMIT 0,1";
+    
+    $dbh->prepare($stmt);
             
-    $stmt->bindParam(':id', $id);
-    $stmt->execute();
+    $dbh->bindParam(1, $id);
+    $dbh->execute($stmt);
 
     // $row = $stmt -> fetch(PDO::ASSOC);
 
