@@ -9,12 +9,13 @@ try{
     $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
-    $stmt = "SELECT id  FROM mydvds WHERE id = ? LIMIT 0,1";
-    
-    $dbh->prepare($stmt);
-            
+    $stmt= $dbh->prepare ("SELECT id  FROM mydvds WHERE id = ? LIMIT 0,1");
+
     $dbh->bindParam(1, $id);
     $dbh->execute($stmt);
+
+    // read and remove from add table to the update table???
+    //check order is correct ??
 
     // $row = $stmt -> fetch(PDO::ASSOC);
 
