@@ -24,7 +24,7 @@ try {
 
     // use exec() because no results are returned
     $conn->exec($sql);
-    echo "Record deleted successfully";
+    echo "Movie deleted successfully - if you hit the button by mistake, don't panic! Just add the movie back :-) ";
     }
 catch(PDOException $e)
     {

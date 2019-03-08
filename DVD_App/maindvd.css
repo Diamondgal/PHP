@@ -2,9 +2,8 @@ h1{
     height: 2em;
     position: relative;
 }
-.container { background-color:cornsilk;
+.container { background-color : rgb(235, 222, 214);
     
-
 }
 
 .table { border-collapse :collapse;
@@ -34,7 +33,7 @@ button {
     color: #fff;
     text-shadow: 1px 1px 1px #000;
     border-radius: 10px;
-    background-color: tomato;
+    background-color: rgb(248, 143, 124);
 }
 
 #watched_moviebutton {
@@ -49,7 +48,7 @@ button {
     color: #fff;
     text-shadow: 1px 1px 1px #000;
     border-radius: 10px;
-    background-color: lightseagreen;
+    background-color: rgb(112, 182, 177);
 }
 /* #adding_movie {
     height: 2em;
