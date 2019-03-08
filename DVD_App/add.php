@@ -2,6 +2,11 @@
 <?php
 
 include "connection.php";
+// header("content-type: text/plain");
+// header('Access-Control-Allow-Origin: *');
+// header('Access-Control-Allow-Credentials: true');
+// header('Access-Control-Allow-Headers: "origin, x-requested-with, content-type"');
+// header('Access-Control-Allow-Methods "GET, POST, OPTIONS"');
 
 // class Dvd{
  
@@ -27,7 +32,7 @@ function test_input($data) {
   }
 //  validate string
 
-if(!empty($_POST['name'])) {
+if(isset($_POST['name']) && !empty($_POST['name']))  {
     $name = test_input($_POST['name']);
     function validateName($name) {
         return $name;
@@ -77,7 +82,7 @@ try {
     $stmt->bindParam(':name', $name);
     $stmt->execute();
     
-    echo "New record created successfully";
+    echo "New Movie Added to your list!";
     }
 
 catch(PDOException $e)

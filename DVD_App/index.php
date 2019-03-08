@@ -6,13 +6,11 @@
 <body>
     <div class = "container">
 <h1>Michelle's List of Movies</h1>
-<form action = "./add.php"  method="post"> 
+<form id ='adding_movie' action = "./add.php"  method="post"> 
     Add a new movie :
-    <input type ="text" name="name" value = "">
+    <input type ="text" name="name" value = ""> <br><br>
     <input type="submit" value="Click to Add a New Movie"> <br>
-    
-
-
+    <!-- <button id ="button" type="button">Click to Add a New Movie</button> <br> -->
 </form>
 
 <h2>List of Movies<h2>
@@ -20,7 +18,6 @@
 <?php
 
 include "connection.php" ;
-
 
 
 try {
@@ -68,7 +65,7 @@ try {
                     <form method='post' action='./update.php'>
                     <input type='hidden' name='id' value= <?php echo $row['id'] ?> >
                     <input type='hidden' name='update' value='true'>
-                    <button type ='submit' name='done'>I've watched this movie</button>
+                    <button type ='submit' id='watched_moviebutton' name='done'>I've watched this movie</button>
     
                     </form>
                 

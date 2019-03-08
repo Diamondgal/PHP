@@ -21,7 +21,7 @@ try{
 
     // $this->name = $row['name'];
 
-    echo "Record updated successfully";
+    echo "The database is updated to show you have watched this movie - Back to Home";
 }
 catch(PDOException $e)
 {
