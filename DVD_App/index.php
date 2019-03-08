@@ -33,9 +33,9 @@ try {
     $stmt->execute();
 
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $taskList = $stmt->fetchAll();
+    $movieList = $stmt->fetchAll();
 
-    foreach ($taskList as $row) {
+    foreach ($movieList as $row) {
         ?>
         <table class = "table">
              <tr class = "tr">
@@ -46,7 +46,26 @@ try {
                     <input type='hidden' name='delete' value='true'>
                     <button type ='submit' name='done'>Delete This Movie</button>
                     </form>
-                    <form method='get' action='./update.php'>
+                    <!-- <form method='get' action='./update.php'>
+                    <input type='hidden' name='id' value= <?php echo $row['id'] ?> >
+                    <input type='hidden' name='update' value='true'>
+                    <button type ='submit' name='done'>I've watched this movie</button>
+    
+                    </form> -->
+                
+                </td>
+            </tr> 
+        </table> 
+        <table class = "table">
+             <tr class = "tr">
+                <td class = "td" ><?php echo $row['name'] ; ?><?php echo $row ['description']; ?></td>
+                <td>
+                    <!-- <form method='post' action='./delete.php'>
+                    <input type='hidden' name='id' value= <?php echo $row['id'] ?> >
+                    <input type='hidden' name='delete' value='true'>
+                    <button type ='submit' name='done'>Delete This Movie</button>
+                    </form> -->
+                    <form method='post' action='./update.php'>
                     <input type='hidden' name='id' value= <?php echo $row['id'] ?> >
                     <input type='hidden' name='update' value='true'>
                     <button type ='submit' name='done'>I've watched this movie</button>
@@ -55,8 +74,9 @@ try {
                 
                 </td>
             </tr> 
-        </table>    
+        </table>   
         <?php
+        
             } 
         }
         
