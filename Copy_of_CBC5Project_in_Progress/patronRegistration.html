@@ -1,0 +1,39 @@
+
+   
+        <!DOCTYPE html>
+        <html>
+        <body>
+
+        <h1>Welcome to your Event Host Page</h1>
+            <div >Select your event:  
+            <select id="eventName" name="eventName"
+                class="quantity_select">
+            <option id ="1" selected = "selected" value="1">Event one</option>
+            <option id ="2" value="2">Event two</option>
+            </select>
+            <input type="text"  id="event" value=""></input>
+          <input type="submit" id="eventReport" value='Event Report' ></input>
+          <input type="submit" id="patronRegistration" value = 'Patron Registration' onclick=myFunction()></input>
+
+        </div>
+
+<script>
+
+
+
+function myFunction() {
+    let x = document.getElementById("eventName");
+    val = x.options[x.selectedIndex].innerHTML;
+    window.open("http://localhost/patronRegistration.html?document.getElementById('event').value=val");
+    }
+
+
+</script>
+<script src="main.js"></script>
+
+
+        </body>
+        </html>
+
+
+ 
